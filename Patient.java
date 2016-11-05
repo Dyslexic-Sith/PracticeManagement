@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 /**
  * Created by Sam on 18/10/2016.
  */
@@ -5,18 +7,23 @@ public class Patient extends Employee
 {
     private int patientAge;
     private String patientGender;
-    private String disease;
-    public String dr;
-
-    Patient(String name, String ssn, int age, String gender, String disease)
-    {
-        this.name = name;
-        this.ssn = ssn;
-        this.patientAge = age;
-        this.patientGender = gender;
-        this.disease = disease;
-    }
+    private String disease = "";
     public String name;
+    Patient()
+    {
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Please enter patient's name.");
+        this.name = scan.next();
+        System.out.println("Please enter patient's ssn.");
+        this.ssn = scan.next();
+        System.out.println("Please enter patient's age.");
+        this.patientAge = scan.nextInt();
+        System.out.println("Please enter patient's gender.");
+        this.patientGender = scan.next();
+        System.out.println("Please enter patient's disease.");
+        this.disease = scan.nextLine();
+    }
+
     public String getName()
     {
         return this.name;
@@ -26,7 +33,7 @@ public class Patient extends Employee
        return "I am a " + a;
    }
 
-   public double weeklyPay()
+    public double weeklyPay()
    {
        return 1.0d;
    }

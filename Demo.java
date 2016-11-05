@@ -14,7 +14,12 @@ public class Demo {
     static String password;
     static int age;
     static Scanner reader = new Scanner(System.in);
+
+
+
+
     public static void main(String[] args) throws IOException {
+
         System.out.println("Welcome to Practice Management Software.");
         System.out.println("Please enter your name.");
         username = reader.next();
@@ -48,6 +53,53 @@ public class Demo {
         //dialog.setAlwaysOnTop(true);
         JOptionPane.showMessageDialog(dialog, "Your username is " + username + " and your password is " + password);
         dialog.dispose();
-        
+
+        System.out.println("What would you like to do now? Please select from the following.");
+        System.out.println("Press 'P' to add a patient.");
+        System.out.println("Press 'D' to add a doctor.");
+        System.out.println("Press 'S' to show doctors.");
+        System.out.println("Press 'A' to assign a doctor to a patient.");
+        System.out.println("Press 'R' to show doctors and their patient lists.");
+
+        again= true;
+        while (again)
+        {
+            again= false;
+            int test = br.read();
+            Doctor addDoc;
+            String addPatient;
+            //For case 'a'/'A'
+            switch (test){
+                case 97:
+                case 65:
+                    AdminStaff.assignDoctor();
+                    break;
+                //For case 'p'/'P'
+                case 112:
+                case 80:
+                    System.out.println("You have selected to add a patient.");
+                    AdminStaff.addNewPatient();
+                    break;
+                //For case 's'/'S'
+                case 115:
+                case 83:
+                    System.out.println("Here are the doctors.");
+                    AdminStaff.showDoctors();
+                    break;
+                //For case 'r'/'R'
+                case 114:
+                case 82:
+                    System.out.println("Here are the doctors and the patients lists.");
+                    AdminStaff.showDocAndPatients();
+                    break;
+                case 100:
+                case 68:
+                    AdminStaff.addDoctor();
+                default:
+                    again = true;
+                    System.out.println("Please enter one of the following. Press 'P' to add a patient. Press 'D' to add a doctor. Press 'S' to show doctors. Press 'A' to assign a doctor to a patient. Press 'R' to show the doctors and their patients.");
+                    break;
+            }
+        }
     }
 }
