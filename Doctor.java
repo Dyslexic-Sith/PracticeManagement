@@ -29,6 +29,14 @@ public class Doctor extends Employee
         this.speciality = Speciality[spec];
 
     }
+
+    Doctor(String name, String ssn, String speciality)
+    {
+        this.name = name;
+        this.ssn = ssn;
+        this.speciality = speciality;
+    }
+
     public double weeklyPay()
     {
         double payslip = 40*50;

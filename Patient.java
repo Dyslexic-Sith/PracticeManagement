@@ -24,6 +24,15 @@ public class Patient extends Employee
         this.disease = scan.nextLine();
     }
 
+    Patient (String name, String ssn, int age, String gender, String disease)
+    {
+        this.name = name;
+        this.ssn = ssn;
+        this.patientAge = age;
+        this.patientGender = gender;
+        this.disease = disease;
+    }
+
     public String getName()
     {
         return this.name;
