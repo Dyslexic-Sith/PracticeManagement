@@ -101,21 +101,3 @@ public class AdminStaff extends Employee
         return "I am a " + a;
     }
 }
- class test {
-    public static void main(String[] args) {
-        AdminStaff me = new AdminStaff("Sam","123456");
-        System.out.println(me.toDo("Doctor"));
-        me.addDoctor();
-        me.addDoctor();
-        Doctor Ben = new Doctor();
-        me.addNewPatient();
-        me.addNewPatient();
-        me.assignDoctor();
-        me.assignDoctor();
-
-        me.showDocAndPatients();
-
-
-
-    }
-}
