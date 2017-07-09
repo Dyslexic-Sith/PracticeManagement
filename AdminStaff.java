@@ -36,7 +36,10 @@ public class AdminStaff extends Employee
 
     public static List showDoctors()
     {
-        System.out.println(doctorList.toString());
+        for(int i=0; i <doctorList.size();i++)
+        {
+        System.out.println(doctorList.get(i));
+        }
         return doctorList;
     }
 
@@ -47,15 +50,15 @@ public class AdminStaff extends Employee
         return patientList;
     }
 
-    public static void showDocAndPatients()
+    public void showDocAndPatients()
     {
-        int docLength = doctorList.size();
+
         int i;
-        for (i = 0; i < docLength; i++)
+        for (i = 0; i < doctorList.size(); i++)
         {
             Doctor temp = doctorList.get(i);
             System.out.println(temp.getName());
-            System.out.println(temp.patients);
+            System.out.println(doctorList.get(i).patients);
             System.out.println();
         }
     }
@@ -70,7 +73,7 @@ public class AdminStaff extends Employee
         int i;
         for (i = 0; i < docLength; i++)
         {
-            System.out.println("Press " + i + " for " + doctorList.get(i).name);
+            System.out.println("Press " + i + " for " + doctorList.get(i).name + " who specialises in " +doctorList.get(i).getSpeciality());
         }
         int doctorAssign = scan.nextInt();
         Doctor temp = doctorList.get(doctorAssign);
@@ -81,11 +84,10 @@ public class AdminStaff extends Employee
         {
             System.out.println("Press " + j + " for " + patientList.get(j).name);
         }
-        int patientAssign;
-        patientAssign = scan.nextInt();
+       // int patientAssign;
+       // patientAssign = scan.nextInt();
 
-        Patient temp1 = patientList.get(patientAssign);
-        temp.patients.add(temp1);
+        temp.patients.add(patientList.get(scan.nextInt()));
     }
 
     public double weeklyPay()
