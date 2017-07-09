@@ -21,7 +21,7 @@ public class Patient extends Employee
         System.out.println("Please enter patient's gender.");
         this.patientGender = scan.next();
         System.out.println("Please enter patient's disease.");
-        this.disease = scan.nextLine();
+        this.disease = scan.next();
     }
 
     Patient (String name, String ssn, int age, String gender, String disease)

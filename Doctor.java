@@ -8,7 +8,7 @@ import java.util.Scanner;
  */
 public class Doctor extends Employee
 {
-    public static String speciality;
+    public String speciality;
     public static String[] Speciality = {"ENT", "HeartSpecialist", "Eye"};
     private static int specLength = Speciality.length;
     Doctor()
@@ -24,9 +24,7 @@ public class Doctor extends Employee
         {
             System.out.println("Press " + i + " for " + Speciality[i]);
         }
-        int spec;
-        spec = scan.nextInt();
-        this.speciality = Speciality[spec];
+        this.speciality = Speciality[scan.nextInt()];
 
     }
 
@@ -43,7 +41,7 @@ public class Doctor extends Employee
         return payslip;
     }
 
-    static public List<Patient> patients = new ArrayList<>();
+    public List<Patient> patients = new ArrayList<>();
 
     @Override
     public String toDo(String a)
@@ -54,7 +52,7 @@ public class Doctor extends Employee
 
     public String getSpeciality()
     {
-        return speciality;
+        return this.speciality;
     }
 
     @Override
